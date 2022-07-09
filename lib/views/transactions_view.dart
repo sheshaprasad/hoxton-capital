@@ -31,22 +31,24 @@ class TransactionsView extends GetView<TransactionController> {
                   ),
                 ),
                 SizedBox(height: 2.h,),
-                Container(
-                  margin: EdgeInsets.symmetric(horizontal: 2.w),
-                  height: 25.h,
-                  child: GetBuilder<TransactionController>(
-                    builder: (sc) => ListView.builder(
-                        itemCount: CustomImages.cardsPic.length,
-                        scrollDirection: Axis.horizontal,
-                        itemBuilder: (c, index){
-                          return Container(
-                            child: Column(
-                              children: [
-                                Image.asset(CustomImages.cardsPic[index], width: 80.w, fit: BoxFit.fitHeight,),
-                              ],
-                            ),
-                          );
-                        }),
+                AspectRatio(
+                  aspectRatio: 1.80,
+                  child: Container(
+                    margin: EdgeInsets.symmetric(horizontal: 2.w),
+                    child: GetBuilder<TransactionController>(
+                      builder: (sc) => ListView.builder(
+                          itemCount: CustomImages.cardsPic.length,
+                          scrollDirection: Axis.horizontal,
+                          itemBuilder: (c, index){
+                            return Container(
+                              child: Column(
+                                children: [
+                                  Image.asset(CustomImages.cardsPic[index], width: 80.w, fit: BoxFit.fitHeight,),
+                                ],
+                              ),
+                            );
+                          }),
+                    ),
                   ),
                 ),
                 TabBar(
